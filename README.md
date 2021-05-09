@@ -20,7 +20,7 @@
 Install the shell script from the repo, once done start the shell script by doing:
 ```sh
 bash build.sh 
-``
+```
 NOTE: This script only works on linux or OS's using the BASH Shell.
 
 ## Author
