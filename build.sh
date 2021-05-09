@@ -9,7 +9,7 @@ echo -e "          |_|           "
 # -------------------------------------------------------
 
 VERSION="v0.2"
-GITHUB="https://github.com/Rapi-Dev/DscMaker"
+GITHUB="https://github.com/Rapi-Dev/RapiMaker"
 
 echo -e "----------------------"
 echo -e "|Project: RapiMaker"
@@ -75,9 +75,7 @@ modules_list() {
     clear
 
     echo "1 | Install Fun Module"
-    echo "2 | Install Images Module"
-    echo "3 | Install Moderation Module"
-    echo "4 | Install Music Module"
+    echo "2 | Exit"
 
     read -r TYPE
       case $TYPE in
