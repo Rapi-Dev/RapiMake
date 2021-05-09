@@ -1,15 +1,13 @@
 import discord
 from discord.ext import commands
 
-import json
-import requests
+from dotenv import load_dotenv
 import os
 
-with open('config.json') as f:
-	json_file = json.load(f)
+load_dotenv()
 
 client = commands.Bot(
-    command_prefix=json_file['prefix'],
+    command_prefix=os.environ['PREFIX'],
     intents = discord.Intents.default()
 )
 
@@ -24,4 +22,4 @@ for filename in os.listdir("./Cogs"):
     client.load_extension(f"Cogs.{filename[:-3]}")
     print(f"Loaded Cogs.{filename[:-3]}")
 
-client.run(json_file['token'])
+client.run(os.environ['TOKEN'])
