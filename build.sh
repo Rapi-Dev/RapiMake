@@ -8,11 +8,11 @@ echo -e "          |_|           "
 
 # -------------------------------------------------------
 
-VERSION="v0.2"
-GITHUB="https://github.com/Rapi-Dev/RapiMaker"
+VERSION="v0.3"
+GITHUB="https://github.com/Rapi-Dev/RapiMake"
 
 echo -e "----------------------"
-echo -e "|Project: RapiMaker"
+echo -e "|Project: RapiMake"
 echo -e "|Version: $VERSION"
 echo -e "|Github: $GITHUB"
 echo -e "----------------------"
@@ -75,13 +75,16 @@ modules_list() {
     clear
 
     echo "1 | Install Fun Module"
-    echo "2 | Exit"
+    echo "1 | Install Images Module"
+    echo "3 | Exit"
 
     read -r TYPE
       case $TYPE in
           1 )
              install_fun ;;
-          2 )
+          2) 
+              install_imgs ;;
+          3 )
              exit ;;
 
                      * )
@@ -104,6 +107,23 @@ install_fun() {
   curl -Lo fun.py https://raw.githubusercontent.com/Rapi-Dev/RapiMake/main/assets/fun.py
 
   echo -e "Installed the Fun Module successfuly!"
+}
+
+install_imgs() {
+
+  echo -e "Please enter the directory of the bot that you had set earlier on while creating the basic setup!"
+
+  read DIR
+  cd $DIR
+  cd Cogs
+
+  pip3 install nekos.py
+  pip3 install Tamako.py
+
+  curl -Lo fun.py https://raw.githubusercontent.com/Rapi-Dev/RapiMake/main/assets/fun.py
+
+  echo -e "Installed the Images Module successfuly!"
+    
 }
 
 # -------------------------------------------------------
